@@ -1,0 +1,240 @@
+/* reset de configuraç˜oes padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 80px; /* compensando a altura do cabeçalho fixo */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333333de; /* background com transparência */
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1000;
+}
+/* personalizando o cabeçalho */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+/* personalizando o cabeçalho */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    border: 2px solid #fff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+main {
+    padding: 25px; /* para adicionar um pouco de espaçamento ao redor do conteúdo */
+}
+
+section {
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+section.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* estilos adicionais para a seção sobre mim | na verdade todas as seções, só que com id about-me */
+#about-me {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: justify;
+}
+#about-me h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+}
+#about-me .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+#about-me .about-image {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+}
+#about-me .about-text {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+    text-align: left;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* personalizando o botão de envio */
+input[type="submit"] {
+    margin-top: 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* personalizando o rodapé */
+footer {
+    background-color: #333;
+    color: #ffffffe5;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+footer img {
+    border-radius: 5px;
+    text-decoration: none;
+    
+}
+footer img:hover {
+    transform: scale(1.1);
+
+    
+}
+.copyright {
+    background-color: #444;
+    color: #ddd;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* media queries para responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .portfolio-item img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.2em;
+    }
+
+    input, textarea {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}

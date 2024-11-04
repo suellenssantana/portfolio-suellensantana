@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/icon.jpg" type="image/x-icon">
+    <title>Dados do Contato</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/scr/style1.css">
+</head>
+<body>
+    <header>
+        <h1>Dados do Contato</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Voltar ao Portfólio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dados" tabindex="0">
+            <h2>Informações enviadas</h2>
+            <p><strong>Nome:</strong> <span id="displayName">N/A</span></p>
+            <p><strong>email:</strong> <span id="displayEmail">N/A</span></p>
+            <p><strong>Mensagem:</strong></p>
+            <p id="displayMessage">N/A</p>
+        </section>
+    </main>
+
+    <footer style="font-size: small;">
+        <p>&copy; 2024 Desenvolvido por Suellen Santana</p>
+    </footer>
+
+    <script>
+        // recuperando os valores do localStorage
+        document.getElementById('displayName').textContent = localStorage.getItem("name") || 'N/A';
+        document.getElementById('displayEmail').textContent = localStorage.getItem("email") || 'N/A';
+        document.getElementById('displayMessage').textContent = localStorage.getItem("message") || 'N/A';
+    </script>
+</body>
+</html>
